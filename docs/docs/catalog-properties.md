@@ -33,6 +33,7 @@ Iceberg catalogs support using catalog properties to configure catalog behaviors
 | clients                           | 2                  | client pool size                                       |
 | cache-enabled                     | true               | Whether to cache catalog entries |
 | cache.expiration-interval-ms      | 30000              | How long catalog entries are locally cached, in milliseconds; 0 disables caching, negative values disable expiration |
+ cache.expire-after-write-ms       | 0                  | Duration in milliseconds to expire a table from the cache after being created.tables will not refresh on write. 0 disables this policy. its disabled by default |
 | metrics-reporter-impl | org.apache.iceberg.metrics.LoggingMetricsReporter | Custom `MetricsReporter` implementation to use in a catalog. See the [Metrics reporting](metrics-reporting.md) section for additional details |
 | unique-table-location             | false              | Whether to use a unique location for new tables |
 | encryption.kms-impl               | null               | a custom `KeyManagementClient` implementation to use in a catalog for interactions with KMS (key management service). See the [Encryption](encryption.md) document for additional details |
